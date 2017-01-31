@@ -1,13 +1,32 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
-<body>
-<h2>Hello World!</h2>
+<script src="resources/js/jquery.min.js "/></script>
+
+
+
+
+
+
+
+
+<style>
+body {
+    background-color: blue;
+}
+
+
+
+</style>
+<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="carousel.jsp"></jsp:include>
+<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="about-us.jsp"></jsp:include>
+
+<jsp:include page="contact us.jsp"></jsp:include>
 	<c:if test="${empty successMsg}">
-	<h2>please Login or Register</h2>
-	<a href="login">Login</a> <br>
-	<a href="register">Register</a>
-	<a href="admin">admin</a><br>
+	
+	
 	</c:if>
 	<hr>
 	${successMsg}
@@ -17,8 +36,6 @@
 	<c:if test="${showRegistrationPage}">
 	<jsp:include page="register.jsp"></jsp:include>
 	</c:if>
-	
-	
 
 </body>
 </html>

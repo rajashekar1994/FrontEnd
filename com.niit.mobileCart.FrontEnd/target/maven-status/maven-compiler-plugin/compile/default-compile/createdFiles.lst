@@ -1,2 +1,7 @@
-com\niit\mobileCart\FrontEnd\Contoller\ProductController.class
 com\niit\mobileCart\FrontEnd\Contoller\UserController.class
+com\niit\mobileCart\FrontEnd\Contoller\AdminController.class
+com\niit\mobileCart\FrontEnd\Contoller\ProductController.class
+com\niit\mobileCart\FrontEnd\Contoller\SupplierContoller.class
+com\niit\mobileCart\FrontEnd\Contoller\HomeController.class
+com\niit\mobileCart\FrontEnd\Contoller\CartController.class
+com\niit\mobileCart\FrontEnd\Contoller\CategoryController.class
