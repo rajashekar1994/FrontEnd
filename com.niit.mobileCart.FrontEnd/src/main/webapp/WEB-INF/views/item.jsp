@@ -17,6 +17,28 @@
 <script src="resources/js/jquery.min.js "/></script>
 <title>Insert title here</title>
 <style>
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+</style>
+
+
+<style>
 body{
 background-image:url(resources/images/cart9.jpg);
 background-size: cover;                      
@@ -26,7 +48,7 @@ background-repeat:no-repeat;
 
 </style>
 </head>
-<body>
+<body style="background-color: lightblue;">
  <div style="color:#000000;margin:40px 0px 0px 100px">
     <a style="color:#000000;font-size:2.0em" href="onLoad"><span class="glyphicon glyphicon-home"></span></a>
    </div>
@@ -58,7 +80,7 @@ background-repeat:no-repeat;
 							<td align="left" ><font color="black">${selectedProduct.price}</font></td>
 							<td align="left" ><font color="black">${selectedProduct.category.name}</font></td>
 							<td align="left" ><font color="black">${selectedProduct.supplier.name}</font></td>
-							<td align="left" ><img src="<c:url value="/resources/images/${selectedProduct.id}.jpg"/>" /></td>
+							<td align="left" ><img src="<c:url value="/resources/images/${selectedProduct.id}.jpg" />" height="300px" width="300px" /></td>
 						
 <%-- 							<td align="left" ><a href="<c:url value='cart/add/${selectedProduct.id}' />"><button type="button" class="btn btn-primary">Add to Cart</button></a></td> --%>
 							
@@ -71,7 +93,7 @@ background-repeat:no-repeat;
 					<div class="row text-center">
 						
 						<div class="col-xs-3">
-							<a style="align:right" href="<c:url value='cart/add/${selectedProduct.id}' />"><button  type="button" class="btn btn-primary">Add to Cart</button></a>
+							<a style="align:right" href="<c:url value='product_get_cart_add-${selectedProduct.id}' />"><button  type="button" class="btn btn-primary">Add to Cart</button></a>
 						</div>
 					</div>
      				</div>  

@@ -96,14 +96,18 @@ body {
 
 <h2></h2>
 
-<div class="floating-box"> <img src="<c:url value="resources/images/88.jpg"/>"alt="" width="200" height="200"/></div>
-<div class="floating-box"> <img src="<c:url value="resources/images/33.jpg"/>"alt="" width="200" height="200"/></div>
-<div class="floating-box"> <img src="<c:url value="resources/images/44.jpg"/>"alt="" width="200" height="200"/></div>
-<div class="floating-box"> <img src="<c:url value="resources/images/55.jpg"/>"alt="" width="200" height="200"/></div>
-<div class="floating-box"> <img src="<c:url value="resources/images/66.jpg"/>"alt="" width="200" height="200"/></div>
-<div class="floating-box"> <img src="<c:url value="resources/images/77.jpg"/>"alt="" width="200" height="200"/></div>
+<%-- <div class="floating-box"> <img src="<c:url value="resources/images/88.jpg"/>"alt="" width="200" height="200"/></div> --%>
+<%-- <div class="floating-box"><a href="product/get/,11"><img src="<c:url value="resources/images/33.jpg"/>"alt="" width="200" height="200"/></a></div> --%>
+<%-- <div class="floating-box"> <img src="<c:url value="resources/images/44.jpg"/>"alt="" width="200" height="200"/></div> --%>
+<%-- <div class="floating-box"> <img src="<c:url value="resources/images/55.jpg"/>"alt="" width="200" height="200"/></div> --%>
+<%-- <div class="floating-box"> <img src="<c:url value="resources/images/66.jpg"/>"alt="" width="200" height="200"/></div> --%>
+<%-- <div class="floating-box"> <img src="<c:url value="resources/images/77.jpg"/>"alt="" width="200" height="200"/></div> --%>
 
-
+<div class="row">
+    <div class="col-sm-4" ><a href="product_get-,11"><img src="<c:url value="resources/images/1.jpeg"/>"alt="" width="200" height="200"/></a></div>
+    <div class="col-sm-4" ><a href="product_get-,12"><img src="<c:url value="resources/images/44.jpg"/>"alt="" width="200" height="200"/></a></div>
+    <div class="col-sm-4"><a href="product_get-,13"><img src="<c:url value="resources/images/66.jpg"/>"alt="" width="200" height="200"/></a></div><br>
+  </div>
 
 </body>
 

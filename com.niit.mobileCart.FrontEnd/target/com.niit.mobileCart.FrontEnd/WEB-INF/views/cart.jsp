@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script src="resources/js/jquery.min.js "/></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -17,7 +18,8 @@
  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 <title>Insert title here</title>
-</head>
+
+
 <style>
 body{
 background-image: url(resources/images/cart9.jpg);
@@ -25,6 +27,7 @@ background-size:     cover;
     background-repeat:   no-repeat;
 
 }
+
 th{
     color:white;
     background-color:black;
@@ -43,7 +46,7 @@ font-family: "Times New Roman", Times, serif;
 
 
 </style>
-<body>
+<body style="background-color: lightblue;">
 	<h1 style="color:black"><center >CART LIST</center></h1>
 	<div class="container" style="align:center; margin: 20px 100px 0px 400px">
 	
@@ -65,6 +68,7 @@ font-family: "Times New Roman", Times, serif;
 						</div>
 					</div>
 				</div>
+				
 				<div class="panel-body">
 				<c:forEach items="${cartList}" var="cart">
 					<div class="row">
@@ -93,18 +97,7 @@ font-family: "Times New Roman", Times, serif;
 					
 					
 					
-					<div class="row">
-						<div class="text-center">
-							<div class="col-xs-9">
-								<h6 class="text-right">Added items?</h6>
-							</div>
-							<div class="col-xs-3">
-								<a href="<c:url value="/myCart" />"  type="button" class="btn btn-default btn-sm btn-block">
-									Update cart
-								</a>
-							</div>
-						</div>
-					</div>
+					
 				</div>
 				<div class="panel-footer">
 					<div class="row text-center">
@@ -112,7 +105,7 @@ font-family: "Times New Roman", Times, serif;
 							<h4 class="text-right"> Total: ${sum}</h4>
 						   </div>
 						<div class="col-xs-3">
-							<a href="checkout" type="button" class="btn btn-success btn-block">
+							<a   href="checkout" type="button" class="btn btn-success btn-block">
 								Checkout
 							</a>
 						</div>

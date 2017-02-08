@@ -18,13 +18,6 @@
  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 <title>Insert title here</title>
-</head>
-<style>
-body {
-    background-color:lightblue;
-}
-</style>
-</head>
 
 
 <style>
@@ -53,7 +46,7 @@ font-family: "Times New Roman", Times, serif;
 
 
 </style>
-<body>
+<body style="background-color: lightblue;">
 	<h1 style="color:black"><center >CART LIST</center></h1>
 	<div class="container" style="align:center; margin: 20px 100px 0px 400px">
 	
@@ -75,6 +68,7 @@ font-family: "Times New Roman", Times, serif;
 						</div>
 					</div>
 				</div>
+				
 				<div class="panel-body">
 				<c:forEach items="${cartList}" var="cart">
 					<div class="row">
@@ -103,18 +97,7 @@ font-family: "Times New Roman", Times, serif;
 					
 					
 					
-					<div class="row">
-						<div class="text-center">
-							<div class="col-xs-9">
-								<h6 class="text-right">Added items?</h6>
-							</div>
-							<div class="col-xs-3">
-								<a class="btn btn-info"  href="<c:url value="/myCart" />"  type="button" class="btn btn-default btn-sm btn-block">
-									Update cart
-								</a>
-							</div>
-						</div>
-					</div>
+					
 				</div>
 				<div class="panel-footer">
 					<div class="row text-center">

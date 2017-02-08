@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-	http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security 
-http://www.springframework.org/schema/security/spring-security.xsd"
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd"
 	xmlns:security="http://www.springframework.org/schema/security"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns="http://www.springframework.org/schema/beans">
@@ -16,8 +16,17 @@ http://www.springframework.org/schema/security/spring-security.xsd"
 		<security:intercept-url access="hasRole('ROLE_USER')"
 			pattern="/user" />
 
-		<security:intercept-url access="hasRole('ROLE_USER')"
-			pattern="product**" />
+		<security:intercept-url access="hasRole('ROLE_ADMIN')"
+			pattern="/product" />
+			
+			<security:intercept-url access="hasRole('ROLE_USER')"
+			pattern="/product_get_cart_add-{id}" />
+			
+		
+			
+			<security:intercept-url access="hasRole('ROLE_USER')"
+			pattern="/myCart" />
+			
 		<security:form-login login-processing-url="/j_spring_security_check"
 			password-parameter="password" username-parameter="id"
 			authentication-failure-url="/login?error" default-target-url="/"

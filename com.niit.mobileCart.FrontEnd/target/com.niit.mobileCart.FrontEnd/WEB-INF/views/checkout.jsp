@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script src="resources/js/jquery.min.js "/></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -43,7 +44,7 @@ font-family: "Times New Roman", Times, serif;
 
 
 </style>
-<body>
+<body style="background-color: lightblue;">
 
 <h1 style="color:black"><center>REVIEW ORDER</center></h1>
 <div class="container" style="align:center; margin: 20px 100px 0px 400px">

@@ -75,13 +75,14 @@ public class CartController
 		catch(Exception ex)
 		{
 			System.out.println("ex.getMessage");
+			
 		}
 		return "cart";
 		
 		
 	}
 	
-	@RequestMapping(value = "product/get/cart/add/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "product_get_cart_add-{id}", method = RequestMethod.GET)
 	public String addToCart(@PathVariable("id") String id, HttpServletRequest request ,Principal principal)
 	{
 		try
@@ -152,7 +153,7 @@ public class CartController
 		return "thanks";
 	}
 	
-	@RequestMapping(value="product/get/{id}")
+	@RequestMapping(value="product_get-{id}")
 	public String getItems(@PathVariable("id")String id,Model model)
 	{
 		model.addAttribute("selectedProduct",this.productDao.get(id));

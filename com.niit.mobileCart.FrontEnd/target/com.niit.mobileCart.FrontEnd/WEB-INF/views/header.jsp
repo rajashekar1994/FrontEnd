@@ -1,7 +1,9 @@
 <%-- <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %> --%>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ <%@ page isELIgnored="false" %>
 <html>
 <head>
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -10,6 +12,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <script src="resources/js/jquery.min.js "/></script> -->
 
 <style>
 .reg
@@ -42,25 +45,46 @@ background-size:     cover;
 <nav class="navbar navbar-inverse"  >
   <div class="container-fluid" style="color:white">
     <div class="navbar-header" style="color:white">
-      <a style="color:#F5F5DC" class="navbar-brand" href="#">FURNITURE SHOP</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a style="color:#F5F5DC" href="home">HOME</a></li>
+      <a style="color:#F5F5DC" class="navbar-brand" href="#">MTLkart</a>
+    </div> 
+    
+<!--     <ul class="nav navbar-nav"> -->
+<!--       <li class="active"><a style="color:#F5F5DC" href="home">HOME</a></li> -->
+<%--       	<c:forEach items="${categoryList}" var="category"> --%>
+<!--       		<li class="dropdown"> -->
+<%--       			<a class="dropdown-toggle" data-toggle="dropdown" href="${category.name}">${category.name}<span class="caret"></span>  --%>
+<!--       			</a> -->
+<!--       		<ul class="dropdown-menu"> -->
+<%--       			<c:forEach items="${category.products}" var="product"> --%>
+<%--       				<li><a style="color:#000000" href="<c:url value='product_get-${product.id}'/>"> ${product.name} </a> --%>
+<%--     			</c:forEach> --%>
+<!--        			<li><a style="color:#F5F5DC" href="#"></a></li> -->
+<!--      		</ul> -->
+<!--       		</li>        -->
+<%--       	</c:forEach> --%>
+      
+<!--      	<li><a style="color:#F5F5DC" href="about-us">about us</a></li>   -->
+<!--     </ul> -->
+
+<ul class="nav navbar-nav">
+      <li class="active"><a style="color:#F5F5DC" href="#">HOME</a></li>
       <c:forEach items="${categoryList}" var="category">
       <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href=${category.name}>${category.name}<span class="caret"></span> </a>
       <ul class="dropdown-menu">
       <c:forEach items="${category.products}" var="product">
-      <li><a style="color:#000000" href="<c:url value='product/get/${product.id}'/>"> ${product.name} </a>
+      <li><a style="color:#000000" href="<c:url value='product_get-${product.id}'/>"> ${product.name} </a>
     
      </c:forEach>
+     
        <li><a style="color:#F5F5DC" href="#"></a></li>
      </ul>
       </li>       
       </c:forEach>
       
-      <li><a style="color:#F5F5DC" href="aboutUs">CONTACT US</a></li> 
+    <li><a style="color:#F5F5DC" href="about-us">about us</a></li> 
     </ul>
+    
     
     
     
@@ -69,7 +93,7 @@ background-size:     cover;
       <li class="divider-vertical"></li>
        <c:if test="${pageContext.request.userPrincipal.name != null}">
       <c:if test="${pageContext.request.userPrincipal.name != 'shekar.chennapai'}">
-      <li><a  href="<c:url value="/myCart" />"><span class="glyphicon glyphicon-shopping-cart"></span> CART</a>${cartSize}</li>
+      <li><a  href="<c:url value="/myCart" />"><span class="glyphicon glyphicon-shopping-cart"></span> CART(${size})</a></li>
       </c:if>
       <c:if test="${pageContext.request.userPrincipal.name  == 'shekar.chennapai'}">
        <li><a style="color:#F5F5DC" href="<c:url value="/admin" />">VIEW ALL</a></li>

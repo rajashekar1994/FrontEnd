@@ -136,15 +136,15 @@ th {
  
  
  <form:form action="product-add" commandName="product" method="post" enctype="multipart/form-data">
-	<table border="4px" bgcolor="#45B39D">
+	<table  border="4px" bgcolor="#45B39D">
 		<tr>
 		<td>Product ID</td>
 	<c:choose>
 		<c:when test="${!empty product.id}">
-		<td><form:input class="btn btn-default"  type="text" path="id" name="id" disabled="true" readonly="true"/></td>
+		<td><form:input class="btn btn-default"  type="text" path="id" name="id" disabled="true" readonly="true" /></td>
 		</c:when>
 		<c:otherwise>
-		<td><form:input class="btn btn-default"  type="text" path="id" name="id" maxlength="20"/></td>
+		<td><form:input class="btn btn-default"  type="text" path="id" name="id" maxlength="20" required="true"/></td>
 		</c:otherwise>
 		</c:choose>
 		</tr>
@@ -152,37 +152,37 @@ th {
 	<tr>
 		<form:input path="id" hidden="true"/>
 		<td>Product Name</td>
-		<td><form:input class="btn btn-default"  type="text" path="name" name="name" maxlength="50" /></td>
+		<td><form:input class="btn btn-default"  type="text" path="name" name="name" maxlength="50" required="true"/></td>
 	</tr>		
 		
 	<tr>
 		<td>Product Price</td>
-		<td><form:input class="btn btn-default"  type="text" path="price" name="price" maxlength="5" /></td>
+		<td><form:input class="btn btn-default"  type="text" path="price" name="price" maxlength="5" required="true"/></td>
 	</tr>
 	
 	<tr>
 		<td>Product Description</td>
-		<td><form:input class="btn btn-default"  type="text" path="description" name="description" maxlength="100" /></td>
+		<td><form:input class="btn btn-default"  type="text" path="description" name="description" maxlength="100" required="true" /></td>
 	</tr>
 	
 	<tr>
 		<td>Category List</td>
-		<td><form:select class="btn btn-default"  path="category.name" items="${categoryList}" itemValue="name" itemLabel="name"></form:select></td>
+		<td><form:select class="btn btn-default"  path="category.name" items="${categoryList}" itemValue="name" itemLabel="name" required="true"></form:select></td>
 	</tr>
 
 	<tr>
 		<td>Supplier List</td>
-		<td><form:select class="btn btn-default"  path="supplier.name" items="${supplierList}" itemValue="name" itemLabel="name"></form:select></td>
+		<td><form:select class="btn btn-default"  path="supplier.name" items="${supplierList}" itemValue="name" itemLabel="name" required="true"></form:select></td>
 	</tr>
 
 	<tr>
 		<td>Product Stock</td>
-		<td><form:input class="btn btn-default"  type="text" path="stock" name="stock" maxlength="5" /></td>
+		<td><form:input class="btn btn-default"  type="text" path="stock" name="stock" maxlength="5" required="true"/></td>
 	</tr>
 	
 	<tr>
 		<td>Product Image</td>
-		<td><form:input class="btn btn-default"  type="file" path="image" name="image"/></td>
+		<td><form:input class="btn btn-default"  type="file" path="image" name="image" required="true"/></td>
 	</tr>
 			<tr>
 			<c:if test="${!empty product.name}">
@@ -202,7 +202,7 @@ th {
 <br>
 <h3>PRODUCT LIST</h3>
 <c:if test="${!empty productList}">
-<table class="tg">
+<table border="4px" bgcolor="#45B39D" class="tg">
 <tr  bgcolor="#F0F8FF">
 		
 				<th width="120">Product ID</th>

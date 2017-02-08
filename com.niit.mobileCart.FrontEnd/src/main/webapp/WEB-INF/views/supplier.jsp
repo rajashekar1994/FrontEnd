@@ -69,25 +69,26 @@ th {
 }
 </style>
 </head>
+
 <body>
 
 	<h2  style="color:green;">Enter supplier details</h2>
 <body>
 	<form:form action="supplier-add" commandName="supplier" method="POST">
 
-		<table class="table table-striped">
+		<table border="4px" bgcolor="#45B39D" border="4px" bgcolor="#45B39D">
 
 			<tr>
 				<td>supplier id</td>
-				<td><form:input class="btn btn-default" path="id" type="text" name="supplier id" /></td>
+				<td><form:input class="btn btn-default" path="id" type="text" name="supplier id" required="true"/></td>
 			</tr>
 			<tr>
 				<td>supplier name</td>
-				<td><form:input class="btn btn-default" path="name" type="text" name="name" /></td>
+				<td><form:input class="btn btn-default" path="name" type="text" name="name" required="true"/></td>
 			</tr>
 			<tr>
 				<td>supplier address</td>
-				<td><form:input class="btn btn-default" path="address" type="text" name="address" /></td>
+				<td><form:input class="btn btn-default" path="address" type="text" name="address" required="true"/></td>
 			</tr>
 
 			<tr>
@@ -115,8 +116,8 @@ th {
 
 <h3>SUPPLIER LIST</h3>
 <c:if test="${!empty supplierList}">
-	<table class="tg">
-		<tr bgcolor="#F0F8FF">
+	<table border="4px" bgcolor="#45B39D" class="tg">
+		<tr  bgcolor="#F0F8FF">
 			<th width="120">Supplier ID</th>
 			<th width="120">Supplier Name</th>
 			<th width="120">Supplier Address</th>

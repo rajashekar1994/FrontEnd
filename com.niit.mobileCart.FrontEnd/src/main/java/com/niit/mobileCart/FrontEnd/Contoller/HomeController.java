@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.mobileCart.backEnd.dao.CartDAO;
 import com.niit.mobileCart.backEnd.dao.CategoryDAO;
 import com.niit.mobileCart.backEnd.dao.ProductDao;
 import com.niit.mobileCart.backEnd.dao.SupplierDao;
 import com.niit.mobileCart.backEnd.dao.UserDao;
+import com.niit.mobileCart.backEnd.model.Cart;
 import com.niit.mobileCart.backEnd.model.Category;
 import com.niit.mobileCart.backEnd.model.Product;
 import com.niit.mobileCart.backEnd.model.Supplier;
@@ -48,6 +50,12 @@ public class HomeController {
 	  
 	  @Autowired 
 	  Product product;
+	  
+	  @Autowired
+	  CartDAO cartDAO;
+	  
+	  @Autowired
+	  Cart cart;
 	 
 
 	// @Autowired(required=true)
@@ -69,7 +77,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/register-add", method = RequestMethod.POST)
 	public ModelAndView registering(@ModelAttribute("user") User user) {
-		user.setRole("u");
+		user.setRole("ROLE_USER");
 		userDao.save(user);
 
 		ModelAndView mv = new ModelAndView("register");
@@ -194,14 +202,35 @@ public class HomeController {
 		
 		session.setAttribute("categoryList", categoryDAO.list());
 		
+		int n=cartDAO.list().size();
+		mv.addObject("size", n);
 		return mv;
 	}
 
-    @RequestMapping("onLoad")
-    public String home()
+    @RequestMapping("/onLoad")
+    public ModelAndView home(HttpSession session)
     {
-    	return "redirect:/";
+		ModelAndView mv = new ModelAndView("index");
+		session.setAttribute("category", category);
+		session.setAttribute("product", product);
+		session.setAttribute("supplier", supplier);
+		
+		session.setAttribute("categoryList", categoryDAO.list());
+		
+ 		return mv;
     }
+    
+    @RequestMapping(value="/about-us")
+    public String getAboutus()
+    {
+    	return "about-us";
+    }
+    @RequestMapping(value="/contact-us")
+    public String getContactus()
+    {
+    	return "contactus";
+    }
+    
     
 //    @RequestMapping(value="/carousel")
 //    public String getCarousel()

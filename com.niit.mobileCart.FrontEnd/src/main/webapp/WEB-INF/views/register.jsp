@@ -19,7 +19,7 @@
       <link rel="stylesheet" href="resources/css/style.css">
 </head>
 
-<body>
+<body style="background-color: lightblue;">
 
  <form:form action="register-add" commandName="user" method="POST" >
  <div class="login-wrap">
@@ -31,19 +31,19 @@
 <!--   <div class="sign-up-htm">  -->
 				<div class="group"> 
  					<label for="user" class="label">User id</label>
- 					<form:input path="id" name="id" id="user" type="text" class="input"/> 
+ 					<form:input path="id" name="id" id="user" type="text" class="input" required="true"/> 
  				</div> 
  				<div class="group"> 
  					<label for="pass" class="label">user name</label> 
- 					<form:input path="name" name="name" id="pass" type="text" class="input" /> 
+ 					<form:input path="name" name="name" id="pass" type="text" class="input" required="true"/> 
  				</div> 
  				<div class="group"> 
  					<label for="pass" class="label">Password</label>
- 					<form:input path="password" id="pass" type="password" class="input" data-type="password"/> 
+ 					<form:input path="password" id="pass" type="password" class="input" data-type="password" required="true"/> 
  				</div> 
  				<div class="group"> 
  					<label for="pass" class="label">mobile no</label> 
- 					<form:input path="mobile" id="pass" type="text" class="input"/> 
+ 					<form:input path="mobile" id="pass" type="text" class="input" required="true"/> 
  				</div> 
  				<div class="group"> 
  					<input type="submit" class="button" value="register"> 

@@ -17,7 +17,6 @@
 <head>
 
 </head>
-
 <style>
 table {
 	border-collapse: collapse;
@@ -39,6 +38,7 @@ th {
 }
 </style>
 </head>
+
 
 
 </body>
@@ -88,15 +88,15 @@ th {
 
 
 <form:form action="category-add" commandName="category" method="post">
-	<table   bgcolor="#45B39D">
+	<table border="4px" bgcolor="#45B39D">
 		<tr >
 			<td>category id</td>
 			<c:choose>
 			<c:when test="${!empty category.id}">
-			<td><form:input type="text" path="id" name="id" disabled="true" readonly="true"/></td>
+			<td><form:input type="text" path="id" name="id" disabled="true" readonly="true" required="true"/></td>
 			</c:when>
 			<c:otherwise>
-			<td><form:input class="btn btn-default" type="text" path="id" name="id"/></td>
+			<td><form:input class="btn btn-default" type="text" path="id" name="id" required="true"/></td>
 			</c:otherwise>
 			</c:choose>	
 		</tr>
@@ -104,12 +104,12 @@ th {
 		<tr>
 			<form:input path="id" hidden="true"/>
 			<td>category name</td>
-			<td><form:input class="btn btn-default" type="text" path="name" name="name" maxlength="20" /></td>
+			<td><form:input class="btn btn-default" type="text" path="name" name="name" maxlength="20" required="true"/></td>
 		</tr>
 		
 		<tr>
 			<td> category description</td>
-			<td><form:input class="btn btn-default" type="text" path="description" name="description" maxlength="20" /></td>
+			<td><form:input class="btn btn-default" type="text" path="description" name="description" maxlength="20" required="true" /></td>
 		</tr>	
 			
 		<tr>
@@ -126,7 +126,8 @@ th {
 <hr>
 
 	<c:if test="${!empty categoryList}">
-		<table class="tg" width=100% cellpadding="5px">
+		<table border="4px" bgcolor="#45B39D" class="tg" width=100% cellpadding="5px">
+		
 			<tr bgcolor="#F0F8FF">
 				<th width="80">Category ID</th>
 				<th width="120">Category Name</th>

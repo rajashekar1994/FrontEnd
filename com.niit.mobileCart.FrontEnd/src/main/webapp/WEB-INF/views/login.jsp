@@ -12,17 +12,21 @@
 
 
   <meta charset="UTF-8">
-  <title>Day 001 Login Form</title>
+  <h2><center>LOGIN HERE</center></h2>
   
   
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:600'>
 
       <link rel="stylesheet" href="resources/css/style.css">
+      
+       
+      
+    </head>
+    
+    
+    
 
-  
-</head>
-
-<body>
+<body style="background-color: lightblue;">
 <form  action="<c:url value='j_spring_security_check'/>"  method="POST" role="form">
 
   <div class="login-wrap">
@@ -33,19 +37,19 @@
 			<div class="sign-in-htm">
 				<div class="group">
 					<label for="user" class="label">Username</label>
-					<input  name="id" id="id" type="text" class="input">
+					<input  name="id" id="id" type="text" class="input" required="true">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
-					<input  name="password" id="pass" type="password" class="input" data-type="password">
+					<input  name="password" id="pass" type="password" class="input" data-type="password" required="true">
 				</div>
 				<div class="group">
 					<input id="check" type="checkbox" class="check" checked>
 					<label for="check"><span class="icon"></span> Keep me Signed in</label>
 				</div>
 				<div class="group">
-					<input type="submit" class="button" value="Sign In">
-				</div>
+							<input type="submit" class="button" value="Sign In">
+						</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
 					<a href="#forgot">Forgot Password?</a>
